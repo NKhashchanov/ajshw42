@@ -1,5 +1,5 @@
 export default function findBy(key, name) {
-  return function foo(results) {
+  return results => {
     if (Object.keys(results).includes(key) && results[key] === name) {
       return results;
     }
@@ -7,7 +7,7 @@ export default function findBy(key, name) {
   };
 }
 
-const finder = findBy('type', 'character');
+const finder = findBy();
 const results = [
   { name: 'маг', type: 'character', description: 'Персонаж, обладающий магическими способностями' },
   { name: 'заклинание', type: 'attack', description: 'Атака магическим заклинанием' },
